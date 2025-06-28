@@ -1,0 +1,93 @@
+:root{
+    --border :8px;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'lato';
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    & .calculatrice{
+        -webkit-backdrop-filter: blur(5px);
+        background-color: #223A5E;
+        backdrop-filter: blur(5px);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding:1.25em 1.25em 1.750em;
+        gap: 1em;
+        width: 410px;
+        border-radius: 15px;
+        
+        & h1{
+            color: white;
+            font-family: 'winky rough';
+            
+        }
+
+        & .ecran{
+            font-size: 2em;
+            color: black;
+            width: 100%;
+            height: 125px;
+            background-color: #f0f0f0;
+            padding: 0.25em;
+            border-radius: 10px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+        
+        & .boutons{
+            width: 100%;
+            display: grid;
+            justify-content: space-between;
+            grid-template-columns: repeat(4, 22.5%);
+            gap: 0.15em;
+            row-gap: 0.95em;
+            
+            & button{
+                color: #223A5E;
+                font-size: 1em;
+                background-color: white;
+                border-radius: var(--border);
+                height: 3.75em;
+                border: none;
+                outline: none;
+                box-shadow: 0 6px #a8a8a8;
+                transition: all .25s ease-in-out;
+                &:hover{
+                    background-color: #f0f0f0;
+                    cursor: pointer;
+                }
+                &:active{
+                translate: 0 5px;
+                box-shadow: 0 3px #a8a8a8;
+
+                }
+                &:first-child{
+                    color: white;
+                    background-color: rgb(201, 116, 5);
+                }
+                &:last-child{
+                    grid-column: span 2;
+                    color: white;
+                    background-color:rgb(15, 189, 15);
+                }
+            }
+        }
+
+    }
+}
+@media screen and(min-width:1441px) and(max-width:2560px) {
+    .calculatrice{
+        width: 850px!important;
+    }   
+}
